@@ -7,13 +7,10 @@ body {
     text-align: center;
 }
 
-main {
-    color: white;
-    font-family: '8BIT WONDER', sans-serif;
-}
-
 h1 {
     font-size: 100px;
+    font-family: '8BIT WONDER', sans-serif;
+    color: white;
 }
 
 button {
