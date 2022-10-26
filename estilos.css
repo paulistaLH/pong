@@ -1,0 +1,45 @@
+html {
+    background-color: black;
+
+}
+
+body {
+    text-align: center;
+}
+
+main {
+    color: white;
+    font-family: '8BIT WONDER', sans-serif;
+}
+
+h1 {
+    font-size: 100px;
+}
+
+button {
+    font-family: '8BIT WONDER', sans-serif;
+    color: white;
+    background: black;
+}
+
+#jogar {
+    font-size: 50px;
+    margin-bottom: 2%;
+}
+
+#opcoes button {
+    font-size: 20px;
+    border: 3px solid white;
+    padding: 7px;
+    margin: 0.5%;
+}
+
+#opcoes {
+    display: flex;
+    justify-content: center;
+}
+
+#opcoes.sumir {
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
