@@ -14,13 +14,26 @@
         <h1>Ping!</h1>
         <div><button id="jogar" >Jogar</button>
         <div id="opcoes" class="sumir">
-            <button>Partida Rapida</button>
+            <button id="partida">Partida Rapida</button>
             <button>Torneio</button>
             <button id="configurar">Configurar</button>
         </div>
     </main>
-    <article id="configs">
-        
+    <article id="configs" class="sumir">
+        <h2>Configs.</h2>
+        <label for="musica">Trilha sonora:</label>
+        <select id="musica" value="">
+            <option value="ligado">Ligado</option>
+            <option value="desligado">Desligado</option>
+        </select>
+        <br>
+        <label for="quadra">Quadra:</label>
+        <select id="quadra" value="">
+            <option value="padrao">Padrao</option>
+            <option value="cimento">Cimento</option>
+            <option value="grama">Grama</option>
+            <option value="terra">Terra</option>
+        </select>
     </article>
 </body>
 
