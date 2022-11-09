@@ -58,19 +58,19 @@ let botaoVoltarPartidaEl = document.querySelector("#voltar_partida");
 botaoVoltarPartidaEl.addEventListener('click', ()=>{
     menuEl.classList.remove("sumir");
     partidaEl.classList.add("sumir");
-})
+});
 
 //menu torneio
 
-let botaoVoltarTorneioEl = document.querySelector("#voltar_torneio")
+let botaoVoltarTorneioEl = document.querySelector("#voltar_torneio");
 let torneioEl = document.querySelector("#torneio");
-let botaoTorneioEl = document.querySelector("#botao_torneio")
+let botaoTorneioEl = document.querySelector("#botao_torneio");
 
 botaoTorneioEl.addEventListener('click', ()=>{
     menuEl.classList.add("sumir");
     torneioEl.classList.remove("sumir");
-})
+});
 botaoVoltarTorneioEl.addEventListener('click', ()=>{
     menuEl.classList.remove("sumir");
     torneioEl.classList.add("sumir");
-})
+});
