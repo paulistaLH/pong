@@ -74,3 +74,40 @@ botaoVoltarTorneioEl.addEventListener('click', ()=>{
     menuEl.classList.remove("sumir");
     torneioEl.classList.add("sumir");
 });
+
+//seleções
+
+let botaoBrasilEl = document.querySelector("#brasil");
+let botaoArgentinaEl = document.querySelector("#argentina");
+let botaoEspanhaEl = document.querySelector("#espanha");
+let botaoFrancaEl = document.querySelector("#franca");
+let botaoChinaEl = document.querySelector("#china");
+let botaoJapaoEl = document.querySelector("#japao");
+let botaoEuaEl = document.querySelector("#eua");
+let botaoAlemanhaEl = document.querySelector("#alemanha");
+let selecionadoEl = document.querySelector("#selecionado"); 
+
+botaoBrasilEl.addEventListener('click', ()=>{
+    selecionadoEl.innerHTML = 'Selecao escolhida: Brasil';
+})
+botaoArgentinaEl.addEventListener('click', ()=>{
+    selecionadoEl.innerHTML = 'Selecao escolhida: Argentina';
+})
+botaoEspanhaEl.addEventListener('click', ()=>{
+    selecionadoEl.innerHTML = 'Selecao escolhida: Espanha';
+})
+botaoFrancaEl.addEventListener('click', ()=>{
+    selecionadoEl.innerHTML = 'Selecao escolhida: Franca';
+})
+botaoChinaEl.addEventListener('click', ()=>{
+    selecionadoEl.innerHTML = 'Selecao escolhida: China';
+})
+botaoJapaoEl.addEventListener('click', ()=>{
+    selecionadoEl.innerHTML = 'Selecao escolhida: Japao';
+})
+botaoEuaEl.addEventListener('click', ()=>{
+    selecionadoEl.innerHTML = 'Selecao escolhida: Estados Unidos';
+})
+botaoAlemanhaEl.addEventListener('click', ()=>{
+    selecionadoEl.innerHTML = 'Selecao escolhida: Alemanha';
+})

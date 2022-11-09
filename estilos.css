@@ -1,28 +1,23 @@
-html {
-    background-color: black;
-
-}
-
 body {
     text-align: center;
 }
 
 h1 {
     font-size: 100px;
-    font-family: '8BIT WONDER', sans-serif;
-    color: white;
 } 
 h2{
     font-size: 70px;
-    font-family: '8BIT WONDER', sans-serif;
-    color: white;
     margin: 0;
     padding-bottom: 10px;
 }  
-button {
-    font-family: '8BIT WONDER', sans-serif;
-    color: white;
+h3{
+    margin-top: 1%;
+    font-size: 20px;
+}
+button, option, html, select {
     background: black;
+    color: white;
+    font-family: '8BIT WONDER', sans-serif;
 }
 
 #configurar{
@@ -34,7 +29,7 @@ button {
     margin-bottom: 2%;
 }
 
-#opcoes button, #configurar {
+#opcoes button, #configurar, #torneio button {
     font-size: 20px;
     border: 3px solid white;
     padding: 7px;
@@ -51,21 +46,14 @@ button {
     visibility: hidden !important;
 }
 label{
-    color: white;
-    font-family: '8BIT WONDER', sans-serif;
     font-size: 30px;
     padding-right: 10px;
     padding-bottom: 10px;
 }
 option{
-    color: white;
-    font-family: '8BIT WONDER', sans-serif;
     font-size: 20px;
-    background-color: black;
 }
 select{
-    color: white;
-    font-family: '8BIT WONDER', sans-serif;
     font-size: 20px;
     background-color: black;
     padding: 3px;
@@ -74,4 +62,22 @@ select{
     display: block;
     margin-bottom: 5%;
     font-size: 30px;
+}
+#selecoes1, #selecoes2{
+    display: flex;
+    justify-content: center;
+}
+img{
+    width: 140px;
+    height: 75px;
+    padding-bottom: 5px;
+}
+#torneio button{
+    width: 180px;
+}
+article{
+    position: absolute;
+}
+#menu{
+    margin-left: 40%;
 }
