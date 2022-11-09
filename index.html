@@ -10,31 +10,57 @@
 </head>
 
 <body>
-    <main id="menu">
-        <h1>Ping!</h1>
-        <div><button id="jogar" >Jogar</button>
-        <div id="opcoes" class="sumir">
-            <button id="partida">Partida Rapida</button>
-            <button>Torneio</button>
-            <button id="configurar">Configurar</button>
-        </div>
+    <button id="configurar">Configs.</button>
+    <main>
+
+
+        <article id="menu">
+            <h1>Ping!</h1>
+            <div><button class="sentenca" id="jogar">Jogar</button></div>
+                <div id="opcoes" class="sumir">
+                    <button id="botao_partida">Partida Rapida</button>
+                    <button id="botao_torneio">Torneio</button>
+                </div>
+        </article>
+
+
+        <article id="partida" class="sumir">
+            <button id="voltar_partida"><- voltar</button>
+                <h2 class="sentenca">Quem sera o adversario?</h2>
+                <div id="opcoes">
+                <button id="cpu">Vs. cpu</button>
+                <button id="multiplayer">Multiplayer</button>
+                </div>
+        </article>
+
+
+        <article id="torneio" class="sumir">
+            <button id="voltar_torneio"><- voltar</button>
+            <h2 class="sentenca">Escolha sua selecao!</h2>
+        </article>
+
+
+        <article id="configs" class="sumir">
+            <button id="voltar_configs">
+                <- voltar</button>
+                    <h2>Configs.</h2>
+                    <label for="musica">Trilha sonora:</label>
+                    <select id="musica" value="">
+                        <option value="ligado">Ligado</option>
+                        <option value="desligado">Desligado</option>
+                    </select>
+                    <br>
+                    <label for="quadra">Quadra:</label>
+                    <select id="quadra" value="">
+                        <option value="padrao">Padrao</option>
+                        <option value="cimento">Cimento</option>
+                        <option value="grama">Grama</option>
+                        <option value="terra">Terra</option>
+                    </select>
+        </article>
+
+
     </main>
-    <article id="configs" class="sumir">
-        <h2>Configs.</h2>
-        <label for="musica">Trilha sonora:</label>
-        <select id="musica" value="">
-            <option value="ligado">Ligado</option>
-            <option value="desligado">Desligado</option>
-        </select>
-        <br>
-        <label for="quadra">Quadra:</label>
-        <select id="quadra" value="">
-            <option value="padrao">Padrao</option>
-            <option value="cimento">Cimento</option>
-            <option value="grama">Grama</option>
-            <option value="terra">Terra</option>
-        </select>
-    </article>
 </body>
 
 <script src="ping.js"></script>
