@@ -10,13 +10,16 @@
 </head>
 
 <body>
-    <button id="configurar">Configs.</button>
+    <button id="configurar" class="sumir">Configs.</button>
     <main>
 
-
-        <article id="menu">
+        <article id="titulo">
             <h1>Ping!</h1>
             <div><button class="sentenca" id="jogar">Jogar</button></div>
+        </article>
+        <article id="menu" class="sumir">
+            <h1>Ping!</h1>
+            <h2 class="sentenca">Selecione o modo de jogo:</h2>
                 <div id="opcoes" class="sumir">
                     <button id="botao_partida">Partida Rapida</button>
                     <button id="botao_torneio">Torneio</button>
@@ -25,7 +28,7 @@
 
 
         <article id="partida" class="sumir">
-            <button id="voltar_partida"><- voltar</button>
+            <button id="voltar_partida" class="voltar"><- voltar</button>
                 <h2 class="sentenca">Quem sera o adversario?</h2>
                 <div id="opcoes">
                 <button id="cpu">Vs. cpu</button>
@@ -35,8 +38,9 @@
 
 
         <article id="torneio" class="sumir">
-            <button id="voltar_torneio"><- voltar</button>
+            <button id="voltar_torneio" class="voltar"><- voltar</button>
             <h2 class="sentenca">Escolha sua selecao!</h2>
+            <div id="menu_torneio">
             <section id="selecoes1">
                 <button id="brasil"><img src="imgs/brasil.jpg" alt="bandeira brasil">BRA</button>
                 <button id="argentina"><img src="imgs/argentina.webp" alt="bandeira argentina">ARG</button>
@@ -50,12 +54,13 @@
                 <button id="alemanha"><img src="imgs/alemanha.webp" alt="bandeira alemanha">ALM</button>
                 </section>
                 <h3 id="selecionado">Selecao escolhida: </h3>
-                <button>Jogar</button>
+                <button id="jogar_torneio">Jogar</button>
+                </div>
         </article>
 
 
         <article id="configs" class="sumir">
-            <button id="voltar_configs">
+            <button id="voltar_configs" class="voltar">
                 <- voltar</button>
                     <h2>Configs.</h2>
                     <label for="musica">Trilha sonora:</label>

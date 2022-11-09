@@ -4,36 +4,50 @@ body {
 
 h1 {
     font-size: 100px;
-} 
-h2{
+}
+
+h2 {
     font-size: 70px;
     margin: 0;
     padding-bottom: 10px;
-}  
-h3{
+}
+
+h3 {
     margin-top: 1%;
     font-size: 20px;
 }
-button, option, html, select {
+
+button,
+option,
+html,
+select {
     background: black;
     color: white;
     font-family: '8BIT WONDER', sans-serif;
 }
 
-#configurar{
+#configurar {
     display: block;
     font-size: 30px;
 }
+
 .sentenca {
     font-size: 40px;
     margin-bottom: 2%;
 }
 
-#opcoes button, #configurar, #torneio button {
+#opcoes button,
+#configurar,
+#torneio button {
     font-size: 20px;
-    border: 3px solid white;
     padding: 7px;
     margin: 0.5%;
+}
+
+#opcoes button,
+#configurar,
+#menu_torneio button {
+    border: 3px solid white;
 }
 
 #opcoes {
@@ -45,39 +59,64 @@ button, option, html, select {
     opacity: 0 !important;
     visibility: hidden !important;
 }
-label{
+
+label {
     font-size: 30px;
     padding-right: 10px;
     padding-bottom: 10px;
 }
-option{
+
+option {
     font-size: 20px;
 }
-select{
+
+select {
     font-size: 20px;
     background-color: black;
     padding: 3px;
 }
-#voltar_configs, #voltar_partida, #voltar_torneio{
+
+.voltar{
     display: block;
     margin-bottom: 5%;
-    font-size: 30px;
+    font-size: 25px;
 }
-#selecoes1, #selecoes2{
+
+#selecoes1,
+#selecoes2 {
     display: flex;
     justify-content: center;
 }
-img{
+
+img {
     width: 140px;
     height: 75px;
     padding-bottom: 5px;
 }
-#torneio button{
+
+#torneio button {
     width: 180px;
 }
-article{
+
+article {
     position: absolute;
 }
-#menu{
+
+#titulo {
     margin-left: 40%;
+}
+
+#menu, #partida {
+    margin-left: 26.45%;
+}
+
+#configs {
+    margin-left: 35%;
+}
+
+#torneio {
+    margin-left: 30%;
+}
+h3{
+    padding-top: 10px;
 }

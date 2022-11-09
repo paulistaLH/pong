@@ -2,21 +2,26 @@
 
 let opcoesEl = document.querySelector("#opcoes");
 let botaoJogarEl = document.querySelector("#jogar");
+let tituloEl = document.querySelector("#titulo");
+let configurarEl = document.querySelector("#configurar");
 
 botaoJogarEl.addEventListener('click', () =>{
     opcoesEl.classList.remove("sumir");
-    botaoJogarEl.innerHTML = "Selecione o modo de jogo:"
-});
+    menuEl.classList.remove("sumir");
+    tituloEl.classList.add("sumir");
+    configurarEl.classList.remove("sumir");
+;});
 
 // menu de configurações
 
-let configurarEl = document.querySelector("#configurar");
+
 let menuEl = document.querySelector("#menu");
 let configsEl = document.querySelector("#configs");
 
 configurarEl.addEventListener('click', () =>{
     menuEl.classList.add("sumir");
     configsEl.classList.remove("sumir");
+    configurarEl.classList.add("sumir");
 });
 
 /*
@@ -39,6 +44,7 @@ let botaoVoltarConfigEl = document.querySelector("#voltar_configs");
 botaoVoltarConfigEl.addEventListener('click', ()=>{
     menuEl.classList.remove("sumir");
     configsEl.classList.add("sumir");
+    configurarEl.classList.remove("sumir");
 })
 
 
