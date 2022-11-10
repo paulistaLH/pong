@@ -22,6 +22,8 @@ configurarEl.addEventListener('click', () =>{
     menuEl.classList.add("sumir");
     configsEl.classList.remove("sumir");
     configurarEl.classList.add("sumir");
+    torneioEl.classList.add("sumir");
+    partidaEl.classList.add("sumir");
 });
 
 /*
