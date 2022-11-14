@@ -1,17 +1,17 @@
 // jogo
 let jogoEl = document.querySelector("#jogo");
-let botaoComecarEl;
-let bolaEl;
-let cpuEl;
-let playerEl;
-let player2El;
-let pontosEsquerdaEl;
-let pontosDireitaEl;
+let botaoComecarEl = document.querySelector("#começar");
+let bolaEl = document.querySelector("#bola");
+let cpuEl = document.querySelector("#cpu");
+let playerEl = document.querySelector("#player");
+let player2El = document.querySelector("#player2");
+let pontosEsquerdaEl = document.querySelector("#pontosEsquerda");
+let pontosDireitaEl = document.querySelector("#pontosEsquerda");
 let game, frame;
 
 let posBolaX, posBolaY, posPlayerY, posPlayer2Y, posCpuY;
 
-let dirY;
+let dirY, dirY2;
 
 let bolaX, bolaY;
 let cpuY = 0;
@@ -26,6 +26,8 @@ function posicionamentoPlayer() {
     if (jogo) {
         posPlayerY += vPlayer * dirY;
         playerEl.style.top = posPlayerY + "px";
+        /*posPlayer2Y += vPlayer2 * dirY2;
+        player2El.style.top = posPlayer2Y + "px";*/
     }
 }
 
@@ -40,7 +42,8 @@ function puxaPartida() {
     if (!jogo) {
         cancelAnimationFrame(frame);
         jogo = true;
-        direçaoJY = 0;
+        dirY = 0;
+        dirY2 = 0;
         posBolaX = 475;
         posBolaY = 240;
         posPlayerY = posPlayer2Y = posCpuY = 180;
@@ -50,16 +53,9 @@ function puxaPartida() {
 
 function inicializar() {
     vBola = vCpu = vPlayer = vPlayer2 = 7;
-    botaoComecarEl = document.querySelector("#começar");
-    bolaEl = document.querySelector("#bola");
-    cpuEl = document.querySelector("#cpu");
-    playerEl = document.querySelector("#player");
-    player2El = document.querySelector("#player2");
-    pontosEsquerdaEl = document.querySelector("#pontosEsquerda");
-    pontosDireitaEl = document.querySelector("#pontosEsquerda");
     botaoComecarEl.addEventListener('click', puxaPartida);
-    document.addEventListener('keyup', (event) => {
-        tecla = event.key;
+    document.addEventListener('keyup', (e) => {
+        tecla = e.key;
         if (tecla == 'ArrowUp') {
             dirY -= 1;
         }
@@ -67,8 +63,8 @@ function inicializar() {
             dirY += 1;
         }
     });
-    document.addEventListener('keydown', (event) => {
-        tecla = event.key;
+    document.addEventListener('keydown', (e) => {
+        tecla = e.key;
         if (tecla == 'ArrowUp') {
             dirY = 0;
         }
@@ -76,7 +72,26 @@ function inicializar() {
             dirY = 0;
         }
     });
+    /*document.addEventListener('keyup', (e) => {
+        tecla = e.key;
+        if (tecla == 'w' || tecla == 'W') {
+            dirY2 -= 1;
+        }
+        else if (tecla == 's' || tecla == 'S') {
+           dirY2 += 1;
+        }
+    });
+    document.addEventListener('keydown', (e) => {
+        tecla = e.key;
+        if (tecla == 'w' || tecla == 'W') {
+            dirY2 = 0;
+        }
+        else if (tecla == 's' || tecla == 'S') {
+            dirY2 = 0;
+        }
+    }); */
 }
+
 //menu principal
 
 let opcoesEl = document.querySelector("#opcoes");
@@ -146,6 +161,17 @@ botaoVsCpuEl.addEventListener('click', () => {
     jogoEl.classList.remove("sumir");
     partidaEl.classList.add("sumir");
     painelEl.classList.remove("sumir");
+    player2El.classList.add("sumir");
+    inicializar();
+})
+
+let botaoMultiplayerEl = document.querySelector("#multiplayer")
+
+botaoMultiplayerEl.addEventListener('click', () => {
+    jogoEl.classList.remove("sumir");
+    partidaEl.classList.add("sumir");
+    painelEl.classList.remove("sumir");
+    cpuEl.classList.add("sumir");
     inicializar();
 })
 
@@ -182,6 +208,19 @@ let botaoJapaoEl = document.querySelector("#japao");
 let botaoEuaEl = document.querySelector("#eua");
 let botaoAlemanhaEl = document.querySelector("#alemanha");
 let selecionadoEl = document.querySelector("#selecionado");
+let botaoPais = document.querySelectorAll(".botaoPais");
+let uniforme;
+
+for(let i=0; i<botaoPais.length; i++) {
+	botaoPais[i].addEventListener('click', function(e) {
+    for (let j = 0; j < botaoPais.length; j++) {
+    	botaoPais[j].classList.remove('selecionado');
+    };
+  	let botaoPaisEl = e.currentTarget;
+  	botaoPaisEl.classList.add('selecionado');
+  });
+};
+
 
 botaoBrasilEl.addEventListener('click', () => {
     selecionadoEl.innerHTML = 'Selecao escolhida: Brasil';
@@ -206,4 +245,10 @@ botaoEuaEl.addEventListener('click', () => {
 })
 botaoAlemanhaEl.addEventListener('click', () => {
     selecionadoEl.innerHTML = 'Selecao escolhida: Alemanha';
+})
+
+let botaoJogarTorneioEl = document.querySelector("#jogar_torneio");
+
+botaoJogarTorneioEl.addEventListener('click', ()=>{
+    torneioEl.classList.add("sumir");
 })
