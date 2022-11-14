@@ -21,7 +21,7 @@ button,
 option,
 html,
 select {
-    background: black;
+    background-color: black;
     color: white;
     font-family: '8BIT WONDER', sans-serif;
 }
@@ -38,7 +38,8 @@ select {
 
 #opcoes button,
 #configurar,
-#torneio button {
+#torneio button, 
+#começar {
     font-size: 20px;
     padding: 7px;
     margin: 0.5%;
@@ -76,7 +77,7 @@ select {
     padding: 3px;
 }
 
-.voltar{
+.voltar {
     display: block;
     margin-bottom: 5%;
     font-size: 25px;
@@ -106,7 +107,8 @@ article {
     margin-left: 40%;
 }
 
-#menu, #partida {
+#menu,
+#partida {
     margin-left: 26.45%;
 }
 
@@ -117,6 +119,52 @@ article {
 #torneio {
     margin-left: 30%;
 }
-h3{
+
+h3 {
     padding-top: 10px;
+}
+
+#jogo {
+    width: 960px;
+    height: 500px;
+    background-color: black;
+    margin: 0px;
+}
+
+#bola {
+    background-color: white;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 240px;
+    left: 475px;
+}
+
+.esquerda,
+.direita {
+    position: absolute;
+    width: 20px;
+    height: 140px;
+    background-color: white;
+    top: 180px;
+}
+
+.direita {
+    left: 930px;
+}
+
+.esquerda {
+    left: 10px
+}
+
+#painel{
+    display: flex;
+}
+input{
+    background-color: black;
+    color: white;
+    font-family: '8BIT WONDER', sans-serif;
+    height: 40px;
+    width: 40px;
+    font-size:35px;
 }

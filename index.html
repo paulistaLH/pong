@@ -31,7 +31,7 @@
             <button id="voltar_partida" class="voltar"><- voltar</button>
                 <h2 class="sentenca">Quem sera o adversario?</h2>
                 <div id="opcoes">
-                <button id="cpu">Vs. cpu</button>
+                <button id="computador">Vs. cpu</button>
                 <button id="multiplayer">Multiplayer</button>
                 </div>
         </article>
@@ -77,6 +77,18 @@
                         <option value="terra">Terra</option>
                     </select>
         </article>
+
+        <div id="painel" class="sumir">
+            <div class="item"><input type="text" id="pontosEsquerda" value="0" size="7"></div>
+            <div class="item"><input type="text" id="pontosDireita" value="0" size="7"></div>
+            <div class="item"><button id="começar">Iniciar</div>
+        </div>
+        <div id="jogo" class="sumir">
+            <div id="bola"></div>
+            <div id="player" class="esquerda"></div>
+            <div id="cpu" class="direita"></div>
+            <div id="player2" class="esquerda"></div>
+        </div>
 
 
     </main>
