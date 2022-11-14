@@ -20,14 +20,60 @@ let vBola, vCpu, vPlayer, vPlayer2;
 
 let pontosEsquerda = 0, pontosDireita = 0;
 let tecla;
-jogo = false;
+let jogo = 0;
 
-function posicionamentoPlayer() {
-    if (jogo) {
-        posPlayerY += vPlayer * dirY;
-        playerEl.style.top = posPlayerY + "px";
-        /*posPlayer2Y += vPlayer2 * dirY2;
-        player2El.style.top = posPlayer2Y + "px";*/
+vBola = vCpu = vPlayer = vPlayer2 = 7;
+
+
+botaoComecarEl.addEventListener('click', puxaPartida);
+document.addEventListener('keydown', (e)=>{
+    tecla = e.key;
+    if (tecla == 'w' || tecla == 'W') {
+        dirY -= 1;
+    }
+    else if (tecla == 's' || tecla == 'S') {
+        dirY += 1;
+    }
+});
+document.addEventListener('keyup', (e)=>{
+    tecla = e.key;
+    if (tecla == 'w' || tecla == 'W') {
+        dirY = 0;
+    }
+    else if (tecla == 's' || tecla == 'S') {
+        dirY = 0;
+    }
+});
+document.addEventListener('keydown', (e)=>{
+    tecla = e.key;
+    if (tecla == 'ArrowUp') {
+        dirY2 -= 1;
+    }
+    else if (tecla == 'ArrowDown') {
+        dirY2 += 1;
+    }
+});
+document.addEventListener('keyup', (e)=>{
+    tecla = e.key;
+    if (tecla == 'ArrowUp') {
+        dirY2 = 0;
+    }
+    else if (tecla == 'ArrowDown') {
+        dirY2 = 0;
+    }
+}
+);
+
+function puxaPartida() {
+    if (jogo == 0) {
+        cancelAnimationFrame(frame);
+        jogo = 1;
+        dirY = 0;
+        dirY2 = 0;
+        posBolaX = 475;
+        posBolaY = 240;
+        posPlayerY = posPlayer2Y = posCpuY = 180;
+        partida();
     }
 }
 
@@ -38,58 +84,13 @@ function partida() {
     frame = requestAnimationFrame(partida);
 }
 
-function puxaPartida() {
-    if (!jogo) {
-        cancelAnimationFrame(frame);
-        jogo = true;
-        dirY = 0;
-        dirY2 = 0;
-        posBolaX = 475;
-        posBolaY = 240;
-        posPlayerY = posPlayer2Y = posCpuY = 180;
-        partida();
+function posicionamentoPlayer() {
+    if (jogo) {
+        posPlayerY += vPlayer * dirY;
+        playerEl.style.top = posPlayerY + "px";
+        posPlayer2Y += vPlayer2 * dirY2;
+        player2El.style.top = posPlayer2Y + "px";
     }
-}
-
-function inicializar() {
-    vBola = vCpu = vPlayer = vPlayer2 = 7;
-    botaoComecarEl.addEventListener('click', puxaPartida);
-    document.addEventListener('keyup', (e) => {
-        tecla = e.key;
-        if (tecla == 'ArrowUp') {
-            dirY -= 1;
-        }
-        else if (tecla == 'ArrowDown') {
-            dirY += 1;
-        }
-    });
-    document.addEventListener('keydown', (e) => {
-        tecla = e.key;
-        if (tecla == 'ArrowUp') {
-            dirY = 0;
-        }
-        else if (tecla == 'ArrowDown') {
-            dirY = 0;
-        }
-    });
-    /*document.addEventListener('keyup', (e) => {
-        tecla = e.key;
-        if (tecla == 'w' || tecla == 'W') {
-            dirY2 -= 1;
-        }
-        else if (tecla == 's' || tecla == 'S') {
-           dirY2 += 1;
-        }
-    });
-    document.addEventListener('keydown', (e) => {
-        tecla = e.key;
-        if (tecla == 'w' || tecla == 'W') {
-            dirY2 = 0;
-        }
-        else if (tecla == 's' || tecla == 'S') {
-            dirY2 = 0;
-        }
-    }); */
 }
 
 //menu principal
@@ -162,7 +163,6 @@ botaoVsCpuEl.addEventListener('click', () => {
     partidaEl.classList.add("sumir");
     painelEl.classList.remove("sumir");
     player2El.classList.add("sumir");
-    inicializar();
 })
 
 let botaoMultiplayerEl = document.querySelector("#multiplayer")
@@ -172,7 +172,6 @@ botaoMultiplayerEl.addEventListener('click', () => {
     partidaEl.classList.add("sumir");
     painelEl.classList.remove("sumir");
     cpuEl.classList.add("sumir");
-    inicializar();
 })
 
 let botaoVoltarPartidaEl = document.querySelector("#voltar_partida");
@@ -211,14 +210,14 @@ let selecionadoEl = document.querySelector("#selecionado");
 let botaoPais = document.querySelectorAll(".botaoPais");
 let uniforme;
 
-for(let i=0; i<botaoPais.length; i++) {
-	botaoPais[i].addEventListener('click', function(e) {
-    for (let j = 0; j < botaoPais.length; j++) {
-    	botaoPais[j].classList.remove('selecionado');
-    };
-  	let botaoPaisEl = e.currentTarget;
-  	botaoPaisEl.classList.add('selecionado');
-  });
+for (let i = 0; i < botaoPais.length; i++) {
+    botaoPais[i].addEventListener('click', function (e) {
+        for (let j = 0; j < botaoPais.length; j++) {
+            botaoPais[j].classList.remove('selecionado');
+        };
+        let botaoPaisEl = e.currentTarget;
+        botaoPaisEl.classList.add('selecionado');
+    });
 };
 
 
@@ -249,6 +248,6 @@ botaoAlemanhaEl.addEventListener('click', () => {
 
 let botaoJogarTorneioEl = document.querySelector("#jogar_torneio");
 
-botaoJogarTorneioEl.addEventListener('click', ()=>{
+botaoJogarTorneioEl.addEventListener('click', () => {
     torneioEl.classList.add("sumir");
 })
