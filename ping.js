@@ -1,3 +1,87 @@
+// jogo
+let jogoEl = document.querySelector("#jogo");
+let botaoComecarEl;
+let bolaEl;
+let cpuEl;
+let playerEl;
+let player2El;
+let pontosEsquerdaEl;
+let pontosDireitaEl;
+let jogo = false, frame;
+
+let posBolaX, posBolaY, posPlayerY, posPlayer2Y, posCpuY;
+
+let dirY;
+
+let posInicialPlayerY = 180, posInicialPlayer2Y = 180, posInicialCpuY = 180, posIncialBolaX = 475, posInicialBolaY = 240;
+
+let quadraX = 0, quadraY = 0, quadraW = 960, quadraH = 500;
+let barraW = 20, barraH = 140, bolaW = 20, bolaH = 20;
+
+let bolaX, bolaY;
+let cpuY = 0;
+
+let vBola, vCpu, vPlayer, vPlayer2;
+
+let pontosEsquerda = 0, pontosDireita = 0;
+let tecla;
+
+function posicionamentoPlayer() {
+    if (jogo) {
+        posPlayerY += vPlayer * dirY;
+        playerEl.style.top = posPlayerY + "px";
+    }
+}
+
+function partida() {
+    if (jogo) {
+        posicionamentoPlayer();
+    }
+    frame = requestAnimationFrame(partida);
+}
+
+function puxaPartida() {
+    if (!jogo) {
+        cancelAnimationFrame(frame);
+        jogo = true;
+        direçaoJY = 0;
+        posBolaX = posIncialBolaX;
+        posBolaY = posInicialBolaY;
+        posPlayerY = posInicialPlayerY;
+        posPlayer2Y = posCpuY = posInicialCpuY = 180;
+        partida();
+    }
+}
+
+function inicializar() {
+    vBola = vCpu = vPlayer = vPlayer2 = 7;
+    botaoComecarEl = document.querySelector("#começar");
+    bolaEl = document.querySelector("#bola");
+    cpuEl = document.querySelector("#cpu");
+    playerEl = document.querySelector("#player");
+    player2El = document.querySelector("#player");
+    pontosEsquerdaEl = document.querySelector("#pontosEsquerda");
+    pontosDireitaEl = document.querySelector("#pontosEsquerda");
+    botaoComecarEl.addEventListener('click', puxaPartida);
+    document.addEventListener('keyup', (e) => {
+        tecla = e.key;
+        if (tecla == 'w' || tecla == 'W') {
+            dirY -= 1;
+        }
+        else if (tecla == 's' || tecla == 'S') {
+            dirY += 1;
+        }
+    });
+    document.addEventListener('keydown', (e) => {
+        tecla = e.key;
+        if (tecla == 'w' || tecla == 'W') {
+            dirY = 0;
+        }
+        else if (tecla == 's' || tecla == 'S') {
+            dirY = 0;
+        }
+    });
+}
 //menu principal
 
 let opcoesEl = document.querySelector("#opcoes");
@@ -128,71 +212,3 @@ botaoEuaEl.addEventListener('click', () => {
 botaoAlemanhaEl.addEventListener('click', () => {
     selecionadoEl.innerHTML = 'Selecao escolhida: Alemanha';
 })
-
-// jogo
-let jogoEl = document.querySelector("#jogo");
-let botaoComecarEl = document.querySelector("#começar");
-let bolaEl = document.querySelector("#bola");
-let cpuEl = document.querySelector("#cpu");
-let playerEl = document.querySelector("#player");
-let player2El = document.querySelector("#player");
-let pontosEsquerdaEl = document.querySelector("#pontosEsquerda");
-let pontosDireitaEl = document.querySelector("#pontosEsquerda");
-
-let jogo = false, frames;
-
-let posBolaX, posBolaY, posPlayerYposPlayer2Y, posCpuY;
-
-let direçaoJY;
-
-let posInicialPlayerY = 180, posInicialPlayer2Y = 180, posInicialCpuY = 180, posIncialBolaX = 475, posInicialBolaY = 240;
-
-let quadraX = 0, quadraY = 0, quadraW = 960, quadraH = 500;
-let barraW = 20, barraH = 140, bolaW = 20, bolaH = 20;
-
-let bolaX, bolaY;
-let cpuY = 0;
-
-let vBola, vCpu, vPlayer, vPlayer2;
-
-let pontosEsquerda = 0, pontosDireita = 0;
-let tecla;
-
-function pressionar(){
-    tecla = e.keyCode
-    if(tecla == 87 || tecla == 119){
-
-    }
-    else if( tecla == 83 || tecla == 115 ){
-
-    }
-};
-function soltar(){
-    
-};
-
-
-function partida(){
-    if(jogo){
-
-    }
-    frames = requestAnimationFrame(partida);
-}
-
-function puxaPartida() {
-    if (!jogo) {
-        cancelAnimationFrame(frame);
-        jogo = true;
-        direçaoJY = 0;
-        posBolaX = posIncialBolaX;
-        posBolaY = posInicialBolaY;
-        posPlayerY = posInicialPlayerY;
-        posPlayer2Y = posCpuY = posInicialCpuY = 180;
-        partida();
-    }
-}
-function inicializar() {
-    botaoComecarEl.addEventListener('click', puxaPartida);
-    document.addEventListener('keyup', pressionar(e));
-    document.addEventListener('keydown', soltar);
-}  //linha 70
