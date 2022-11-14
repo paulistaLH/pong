@@ -21,6 +21,8 @@ let vBola, vCpu, vPlayer, vPlayer2;
 let pontosEsquerda = 0, pontosDireita = 0;
 let tecla;
 let jogo = 0;
+let barraAltura = 140;
+let campoAltura = 500;
 
 vBola = vCpu = vPlayer = vPlayer2 = 7;
 
@@ -73,6 +75,13 @@ function puxaPartida() {
         posBolaX = 475;
         posBolaY = 240;
         posPlayerY = posPlayer2Y = posCpuY = 180;
+        bolaY = 0;
+        if((Math.random() * 10) < 5){
+            bolaX = -1;
+        }
+        else{
+            bolaX = 1;
+        }
         partida();
     }
 }
@@ -80,6 +89,7 @@ function puxaPartida() {
 function partida() {
     if (jogo) {
         posicionamentoPlayer();
+        posicionamentoBola();
     }
     frame = requestAnimationFrame(partida);
 }
@@ -87,10 +97,21 @@ function partida() {
 function posicionamentoPlayer() {
     if (jogo) {
         posPlayerY += vPlayer * dirY;
+        if((posPlayerY + barraAltura) >= campoAltura || posPlayerY <= 0){
+            posPlayerY += (vPlayer * dirY) * (-1);
+        }
         playerEl.style.top = posPlayerY + "px";
         posPlayer2Y += vPlayer2 * dirY2;
+        if((posPlayer2Y + barraAltura) >= campoAltura || posPlayer2Y <= 0){
+            posPlayer2Y += (vPlayer2 * dirY2) * (-1);
+        }
         player2El.style.top = posPlayer2Y + "px";
     }
+}
+
+function posicionamentoBola(){
+    posBolaX += vBola * bolaX;
+    posBolaY += vBola * bolaY;
 }
 
 //menu principal
