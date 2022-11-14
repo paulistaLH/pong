@@ -7,16 +7,11 @@ let playerEl;
 let player2El;
 let pontosEsquerdaEl;
 let pontosDireitaEl;
-let jogo = false, frame;
+let game, frame;
 
 let posBolaX, posBolaY, posPlayerY, posPlayer2Y, posCpuY;
 
 let dirY;
-
-let posInicialPlayerY = 180, posInicialPlayer2Y = 180, posInicialCpuY = 180, posIncialBolaX = 475, posInicialBolaY = 240;
-
-let quadraX = 0, quadraY = 0, quadraW = 960, quadraH = 500;
-let barraW = 20, barraH = 140, bolaW = 20, bolaH = 20;
 
 let bolaX, bolaY;
 let cpuY = 0;
@@ -25,6 +20,7 @@ let vBola, vCpu, vPlayer, vPlayer2;
 
 let pontosEsquerda = 0, pontosDireita = 0;
 let tecla;
+jogo = false;
 
 function posicionamentoPlayer() {
     if (jogo) {
@@ -45,10 +41,9 @@ function puxaPartida() {
         cancelAnimationFrame(frame);
         jogo = true;
         direçaoJY = 0;
-        posBolaX = posIncialBolaX;
-        posBolaY = posInicialBolaY;
-        posPlayerY = posInicialPlayerY;
-        posPlayer2Y = posCpuY = posInicialCpuY = 180;
+        posBolaX = 475;
+        posBolaY = 240;
+        posPlayerY = posPlayer2Y = posCpuY = 180;
         partida();
     }
 }
@@ -59,25 +54,25 @@ function inicializar() {
     bolaEl = document.querySelector("#bola");
     cpuEl = document.querySelector("#cpu");
     playerEl = document.querySelector("#player");
-    player2El = document.querySelector("#player");
+    player2El = document.querySelector("#player2");
     pontosEsquerdaEl = document.querySelector("#pontosEsquerda");
     pontosDireitaEl = document.querySelector("#pontosEsquerda");
     botaoComecarEl.addEventListener('click', puxaPartida);
-    document.addEventListener('keyup', (e) => {
-        tecla = e.key;
-        if (tecla == 'w' || tecla == 'W') {
+    document.addEventListener('keyup', (event) => {
+        tecla = event.key;
+        if (tecla == 'ArrowUp') {
             dirY -= 1;
         }
-        else if (tecla == 's' || tecla == 'S') {
+        else if (tecla == 'ArrowDown') {
             dirY += 1;
         }
     });
-    document.addEventListener('keydown', (e) => {
-        tecla = e.key;
-        if (tecla == 'w' || tecla == 'W') {
+    document.addEventListener('keydown', (event) => {
+        tecla = event.key;
+        if (tecla == 'ArrowUp') {
             dirY = 0;
         }
-        else if (tecla == 's' || tecla == 'S') {
+        else if (tecla == 'ArrowDown') {
             dirY = 0;
         }
     });
