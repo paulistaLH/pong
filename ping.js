@@ -21,14 +21,14 @@ let vBola, vCpu, vPlayer, vPlayer2;
 let pontosEsquerda = 0, pontosDireita = 0;
 let tecla;
 let jogo = 0;
-let barraAltura = 140;
+let barraAltura = 140, barraLargura = 20;
 let campoAltura = 500;
-
-vBola = vCpu = vPlayer = vPlayer2 = 7;
+let bolaAltura = 20;
+vBola = vCpu = vPlayer = vPlayer2 = 8;
 
 
 botaoComecarEl.addEventListener('click', puxaPartida);
-document.addEventListener('keydown', (e)=>{
+document.addEventListener('keydown', (e) => {
     tecla = e.key;
     if (tecla == 'w' || tecla == 'W') {
         dirY -= 1;
@@ -37,7 +37,7 @@ document.addEventListener('keydown', (e)=>{
         dirY += 1;
     }
 });
-document.addEventListener('keyup', (e)=>{
+document.addEventListener('keyup', (e) => {
     tecla = e.key;
     if (tecla == 'w' || tecla == 'W') {
         dirY = 0;
@@ -46,7 +46,7 @@ document.addEventListener('keyup', (e)=>{
         dirY = 0;
     }
 });
-document.addEventListener('keydown', (e)=>{
+document.addEventListener('keydown', (e) => {
     tecla = e.key;
     if (tecla == 'ArrowUp') {
         dirY2 -= 1;
@@ -55,7 +55,7 @@ document.addEventListener('keydown', (e)=>{
         dirY2 += 1;
     }
 });
-document.addEventListener('keyup', (e)=>{
+document.addEventListener('keyup', (e) => {
     tecla = e.key;
     if (tecla == 'ArrowUp') {
         dirY2 = 0;
@@ -76,10 +76,10 @@ function puxaPartida() {
         posBolaY = 240;
         posPlayerY = posPlayer2Y = posCpuY = 180;
         bolaY = 0;
-        if((Math.random() * 10) < 5){
+        if ((Math.random() * 10) < 5) {
             bolaX = -1;
         }
-        else{
+        else {
             bolaX = 1;
         }
         partida();
@@ -97,21 +97,39 @@ function partida() {
 function posicionamentoPlayer() {
     if (jogo) {
         posPlayerY += vPlayer * dirY;
-        if((posPlayerY + barraAltura) >= campoAltura || posPlayerY <= 0){
+        if ((posPlayerY + barraAltura) >= campoAltura || posPlayerY <= 60) {
             posPlayerY += (vPlayer * dirY) * (-1);
         }
         playerEl.style.top = posPlayerY + "px";
         posPlayer2Y += vPlayer2 * dirY2;
-        if((posPlayer2Y + barraAltura) >= campoAltura || posPlayer2Y <= 0){
+        if ((posPlayer2Y + barraAltura) >= campoAltura || posPlayer2Y <= 60) {
             posPlayer2Y += (vPlayer2 * dirY2) * (-1);
         }
         player2El.style.top = posPlayer2Y + "px";
     }
 }
 
-function posicionamentoBola(){
+function posicionamentoBola() {
     posBolaX += vBola * bolaX;
     posBolaY += vBola * bolaY;
+
+    // player1
+    if ((posBolaX <= posPlayerY + barraLargura) && ((posBolaY + bolaAltura >= posPlayerY) && (posBolaY <= posPlayerY + barraAltura))) {
+        bolaX *= -1;
+        bolaY = (((posBolaY + (bolaAltura / 2)) - (posPlayerY + (barraAltura / 2))) / 16);
+    }
+    // player2
+    if ((posBolaX >= posPlayer2Y - barraLargura) && ((posBolaY + bolaAltura >= posPlayer2Y) && (posBolaY <= posPlayer2Y + barraAltura))) {
+        bolaX *= -1;
+        bolaY = ((posBolaY + (bolaAltura / 2)) - (posPlayer2Y + (barraAltura / 2))) / 16;
+    }
+    //cpu
+    if ((posBolaX >= posCpuY - barraLargura) && ((posBolaY + bolaAltura >= posCpuY) && (posBolaY <= posCpuY + barraAltura))) {
+        bolaX *= -1;
+        bolaY = ((posBolaY + (bolaAltura / 2)) - (posCpuY + (barraAltura / 2))) / 16;
+    }
+    bolaEl.style.top = posBolaY + "px";
+    bolaEl.style.left = posBolaX + "px";
 }
 
 //menu principal
