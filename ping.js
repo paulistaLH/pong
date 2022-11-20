@@ -22,9 +22,10 @@ let pontosEsquerda = 0, pontosDireita = 0;
 let tecla;
 let jogo = 0;
 let barraAltura = 140, barraLargura = 20;
-let campoAltura = 500;
-let bolaAltura = 20;
-vBola = vCpu = vPlayer = vPlayer2 = 8;
+let campoAltura = 500, campoLargura = 960;
+let bolaAltura = bolaLargura = 20;
+vCpu = vPlayer = vPlayer2 = 8;
+vBola = 5;
 
 
 botaoComecarEl.addEventListener('click', puxaPartida);
@@ -76,6 +77,9 @@ function puxaPartida() {
         posBolaY = 240;
         posPlayerY = posPlayer2Y = posCpuY = 180;
         bolaY = 0;
+        vCpu = vPlayer = vPlayer2 = 8;
+        vBola = 5;
+
         if ((Math.random() * 10) < 5) {
             bolaX = -1;
         }
@@ -115,19 +119,53 @@ function posicionamentoBola() {
 
     // player1
     if ((posBolaX <= posPlayerY + barraLargura) && ((posBolaY + bolaAltura >= posPlayerY) && (posBolaY <= posPlayerY + barraAltura))) {
-        bolaX *= -1;
         bolaY = (((posBolaY + (bolaAltura / 2)) - (posPlayerY + (barraAltura / 2))) / 16);
+        bolaX *= -1;
     }
     // player2
-    if ((posBolaX >= posPlayer2Y - barraLargura) && ((posBolaY + bolaAltura >= posPlayer2Y) && (posBolaY <= posPlayer2Y + barraAltura))) {
-        bolaX *= -1;
-        bolaY = ((posBolaY + (bolaAltura / 2)) - (posPlayer2Y + (barraAltura / 2))) / 16;
+    if (cpuEl.classList.contains("sumir")) {
+        if ((posBolaX >= posPlayer2Y - barraLargura) && ((posBolaY + bolaAltura >= posPlayer2Y) && (posBolaY <= posPlayer2Y + barraAltura))) {
+            bolaY = ((posBolaY + (bolaAltura / 2)) - (posPlayer2Y + (barraAltura / 2))) / 16;
+            bolaX *= -1;
+        }
     }
     //cpu
-    if ((posBolaX >= posCpuY - barraLargura) && ((posBolaY + bolaAltura >= posCpuY) && (posBolaY <= posCpuY + barraAltura))) {
-        bolaX *= -1;
-        bolaY = ((posBolaY + (bolaAltura / 2)) - (posCpuY + (barraAltura / 2))) / 16;
+    if (player2El.classList.contains("sumir")) {
+        if ((posBolaX >= posCpuY - barraLargura) && ((posBolaY + bolaAltura >= posCpuY) && (posBolaY <= posCpuY + barraAltura))) {
+            bolaY = ((posBolaY + (bolaAltura / 2)) - (posCpuY + (barraAltura / 2))) / 16;
+            bolaX *= -1;
+
+        }
     }
+    // bordas
+    if ((posBolaY >= campoAltura - bolaAltura) || (posBolaY <= 0)) {
+        bolaY *= -1;
+    }
+
+    //ponto
+    if (posBolaX >= (campoLargura - bolaLargura)) {
+        vBola = 0;
+        posBolaX = 475;
+        posBolaY = 240;
+        posPlayerY = posPlayer2Y = posCpuY = 180;
+        pontosEsquerdaEl.value++;
+        jogo = false;
+        playerEl.style.top = posPlayerY + "px";
+        player2El.style.top = posPlayer2Y + "px";
+        cpuEl.style.top = posCpuY + "px";
+    }
+    else if (posBolaX <= 0) {
+        vBola = 0;
+        posBolaX = 475;
+        posBolaY = 240;
+        posPlayerY = posPlayer2Y = posCpuY = 180;
+        pontosDireitaEl.value++;
+        jogo = false;
+        playerEl.style.top = posPlayerY + "px";
+        player2El.style.top = posPlayer2Y + "px";
+        cpuEl.style.top = posCpuY + "px";
+    }
+
     bolaEl.style.top = posBolaY + "px";
     bolaEl.style.left = posBolaX + "px";
 }
