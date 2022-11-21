@@ -20,78 +20,90 @@
         <article id="menu" class="sumir">
             <h1>Ping!</h1>
             <h2 class="sentenca">Selecione o modo de jogo:</h2>
-                <div id="opcoes" class="sumir">
-                    <button id="botao_partida">Partida Rapida</button>
-                    <button id="botao_torneio">Torneio</button>
-                </div>
+            <div id="opcoes" class="sumir">
+                <button id="botao_partida">Partida Rapida</button>
+                <button id="botao_torneio">Torneio</button>
+            </div>
         </article>
 
 
         <article id="partida" class="sumir">
-            <button id="voltar_partida" class="voltar"><- voltar</button>
-                <h2 class="sentenca">Quem sera o adversario?</h2>
-                <div id="opcoes">
-                <button id="computador">Vs. cpu</button>
-                <button id="multiplayer">Multiplayer</button>
-                </div>
+            <button id="voltar_partida" class="voltar">
+                <- voltar</button> <h2 class="sentenca">Quem sera o adversario?</h2>
+                    <div id="opcoes">
+                        <button id="computador">Vs. cpu</button>
+                        <button id="multiplayer">Multiplayer</button>
+                    </div>
         </article>
 
 
         <article id="torneio" class="sumir">
-            <button id="voltar_torneio" class="voltar"><- voltar</button>
-            <h2 class="sentenca">Escolha sua selecao!</h2>
-            <div id="menu_torneio">
-            <section id="selecoes1">
-                <button id="brasil" class="botaoPais"><img src="imgs/brasil.jpg" alt="bandeira brasil">BRA</button>
-                <button id="argentina" class="botaoPais"><img src="imgs/argentina.webp" alt="bandeira argentina">ARG</button>
-                <button id="espanha" class="botaoPais"><img src="imgs/espanha.webp" alt="bandeira espanha">ESP</button>
-                <button id="franca" class="botaoPais"><img src="imgs/frança.webp" alt="bandeira frança">FRA</button>
-                </section>
-                <section id="selecoes2">
-                <button id="china" class="botaoPais"><img src="imgs/china.jpg" alt="bandeira china">CHN</button>
-                <button id="japao" class="botaoPais"><img src="imgs/japao.webp" alt="bandeira japao">JPN</button>
-                <button id="eua" class="botaoPais"><img src="imgs/eua.webp" alt="bandeira eua">EUA</button>
-                <button id="alemanha" class="botaoPais"><img src="imgs/alemanha.webp" alt="bandeira alemanha">ALM</button>
-                </section>
-                <h3 id="selecionado">Selecao escolhida: </h3>
-                <button id="jogar_torneio">Jogar</button>
-                </div>
+            <button id="voltar_torneio" class="voltar">
+                <- voltar</button> <h2 class="sentenca">Escolha sua selecao!</h2>
+                    <div id="menu_torneio">
+                        <section id="selecoes1">
+                            <button id="brasil" class="botaoPais"><img src="imgs/brasil.jpg"
+                                    alt="bandeira brasil">BRA</button>
+                            <button id="argentina" class="botaoPais"><img src="imgs/argentina.webp"
+                                    alt="bandeira argentina">ARG</button>
+                            <button id="espanha" class="botaoPais"><img src="imgs/espanha.webp"
+                                    alt="bandeira espanha">ESP</button>
+                            <button id="franca" class="botaoPais"><img src="imgs/frança.webp"
+                                    alt="bandeira frança">FRA</button>
+                        </section>
+                        <section id="selecoes2">
+                            <button id="china" class="botaoPais"><img src="imgs/china.jpg"
+                                    alt="bandeira china">CHN</button>
+                            <button id="japao" class="botaoPais"><img src="imgs/japao.webp"
+                                    alt="bandeira japao">JPN</button>
+                            <button id="eua" class="botaoPais"><img src="imgs/eua.webp" alt="bandeira eua">EUA</button>
+                            <button id="alemanha" class="botaoPais"><img src="imgs/alemanha.webp"
+                                    alt="bandeira alemanha">ALM</button>
+                        </section>
+                        <h3 id="selecionado">Selecao escolhida: </h3>
+                        <button id="jogar_torneio">Jogar</button>
+                    </div>
         </article>
 
 
         <article id="configs" class="sumir">
             <button id="voltar_configs" class="voltar">
-                <- voltar</button>
-                    <h2>Configs.</h2>
+                <- voltar</button> <h2>Configs.</h2>
                     <label for="musica">Trilha sonora:</label>
                     <select id="musica" value="">
                         <option value="ligado">Ligado</option>
                         <option value="desligado">Desligado</option>
                     </select>
                     <br>
-                    <label for="quadra">Quadra:</label>
-                    <select id="quadra" value="">
-                        <option value="padrao">Padrao</option>
-                        <option value="cimento">Cimento</option>
-                        <option value="grama">Grama</option>
-                        <option value="terra">Terra</option>
-                    </select>
+                    <label for="sensibilidade">Sensibilidade:</label>
+                    <select id="sensibilidade" value="">
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                    </select><br>
+                    <button id="voltar_menu" class="sair">Sair?</button>
         </article>
-
+        <div id="painel" class="sumir">
+            <div class="item"><input type="text" id="pontosEsquerda" value="0" size="7" disabled></div>
+            <div class="item"><input type="text" id="pontosDireita" value="0" size="7" disabled></div>
+        </div><br>
         <div id="jogo" class="sumir">
             <div id="bola"></div>
             <div id="player" class="esquerda"></div>
             <div id="cpu" class="direita"></div>
             <div id="player2" class="direita"></div>
         </div>
-        <div id="painel" class="sumir">
-            <div class="item"><button id="começar">Iniciar</div>
-            <div class="item"><input type="text" id="pontosEsquerda" value="0" size="7"></div>
-            <div class="item"><input type="text" id="pontosDireita" value="0" size="7"></div>
+        <div id="pos_jogo" class="item">
+            <p id="vencedor" class="sumir"></p>
+            <button id="começar" class="sumir">Iniciar</button><br>
+            <button id="reiniciar" class="sumir">Jogar novamente</button>
+            <button id="voltar_menu_jogo" class="sumir">Sair</button>
         </div>
     </main>
 </body>
 
-<script src="ping.js"></script>
+<script src="jogo.js"></script>
+<script src="interface.js"></script>
 
 </html>
