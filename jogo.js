@@ -29,7 +29,7 @@ let jogo = 0;
 let barraAltura = 140, barraLargura = 20;
 let campoAltura = 500, campoLargura = 960;
 let bolaAltura = bolaLargura = 20;
-vCpu = vPlayer = vPlayer2 = 8;
+vCpu = vPlayer = vPlayer2 = 9;
 vBola = 5;
 
 botaoComecarEl.addEventListener('click', puxaPartida);
@@ -107,12 +107,12 @@ function partida() {
 function posicionamentoPlayer() {
     if (jogo) {
         posPlayerY += vPlayer * dirY;
-        if ((posPlayerY + barraAltura) >= campoAltura || posPlayerY <= 60) {
+        if ((posPlayerY + barraAltura) >= campoAltura || posPlayerY <= 10) {
             posPlayerY += (vPlayer * dirY) * (-1);
         }
         playerEl.style.top = posPlayerY + "px";
         posPlayer2Y += vPlayer2 * dirY2;
-        if ((posPlayer2Y + barraAltura) >= campoAltura || posPlayer2Y <= 60) {
+        if ((posPlayer2Y + barraAltura) >= campoAltura || posPlayer2Y <= 10) {
             posPlayer2Y += (vPlayer2 * dirY2) * (-1);
         }
         player2El.style.top = posPlayer2Y + "px";
