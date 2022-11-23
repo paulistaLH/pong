@@ -100,6 +100,7 @@ function partida() {
         botaoComecarEl.classList.add("sumir");
         posicionamentoPlayer();
         posicionamentoBola();
+        controlaCPU();
     }
     frame = requestAnimationFrame(partida);
 }
@@ -219,3 +220,29 @@ voltarPosJogoEl.addEventListener('click', () => {
     pontosDireitaEl.value = 0;
     pontosEsquerdaEl.value = 0;
 })
+function controlaCPU(){
+    if(jogo){
+        if(posBolaX > (campoLargura / 2) && bolaX > 0){
+            if(posBolaY + (bolaAltura / 2) > ((posCpuY + (barraAltura / 2)) + vCpu)){
+                if((posCpuY + barraAltura) <= campoAltura){
+                    posCpuY += vCpu;
+                }
+            }
+            else if(posBolaY + (bolaAltura / 2) < (posCpuY + (barraAltura / 2)) - vCpu){
+                    if(posCpuY >= 0){
+                        posCpuY -= vCpu;
+                }
+            }   
+        }
+        else{
+            
+            if(posCpuY + (barraAltura / 2) < (campoAltura / 2)){
+                posCpuY += vCpu;
+            }
+            else if(posCpuY + (barraAltura / 2) > (campoAltura / 2)){
+                posCpuY -= vCpu;
+            }
+        }
+    }
+    cpuEl.style.top = posCpuY + "px";
+}
