@@ -178,7 +178,7 @@ function posicionamentoBola() {
         cpuEl.style.top = posCpuY + "px";
         botaoComecarEl.classList.remove("sumir");
     }
-    if (pontosEsquerdaEl.value == 7) {
+    if (pontosEsquerdaEl.value == 1) {
         vBola = 0;
         botaoComecarEl.classList.add("sumir");
         reiniciarEl.classList.remove("sumir");
@@ -187,7 +187,7 @@ function posicionamentoBola() {
         vencedorEl.innerHTML = "Jogador 1 venceu!"
         configurarEl.classList.add("sumir");
     }
-    else if (pontosDireitaEl.value == 7) {
+    else if (pontosDireitaEl.value == 1) {
         vBola = 0;
         botaoComecarEl.classList.add("sumir");
         reiniciarEl.classList.remove("sumir");
