@@ -100,6 +100,7 @@ botaoVoltarMenuEl.addEventListener('click', () => {
 // menu partida rápida
 
 let botaoPartidaEL = document.querySelector("#botao_partida");
+let botaoVoltarPartidaEl = document.querySelector("#voltar_partida");
 let partidaEl = document.querySelector("#partida");
 let painelEl = document.querySelector("#painel");
 
@@ -108,6 +109,10 @@ botaoPartidaEL.addEventListener('click', () => {
     partidaEl.classList.remove("sumir");
 });
 
+botaoVoltarPartidaEl.addEventListener('click', ()=>{
+    menuEl.classList.remove("sumir");
+    partidaEl.classList.add("sumir");
+})
 let botaoVsCpuEl = document.querySelector("#computador");
 
 botaoVsCpuEl.addEventListener('click', () => {
