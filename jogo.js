@@ -181,6 +181,7 @@ function posicionamentoBola() {
         vencedorEl.classList.remove("sumir");
         voltarPosJogoEl.classList.remove("sumir");
         vencedorEl.innerHTML = "Jogador 1 venceu!"
+        configurarEl.classList.add("sumir");
     }
     else if (pontosDireitaEl.value == 7) {
         vBola = 0;
@@ -189,6 +190,7 @@ function posicionamentoBola() {
         vencedorEl.classList.remove("sumir");
         voltarPosJogoEl.classList.remove("sumir");
         vencedorEl.innerHTML = "Jogador 2 venceu!"
+        configurarEl.classList.add("sumir");
     }
     bolaEl.style.top = posBolaY + "px";
     bolaEl.style.left = posBolaX + "px";
@@ -202,7 +204,8 @@ reiniciarEl.addEventListener('click', () => {
     vencedorEl.classList.add("sumir");
     reiniciarEl.classList.add("sumir");
     voltarPosJogoEl.classList.add("sumir");
-})
+    configurarEl.classList.remove("sumir");
+});
 
 voltarPosJogoEl.addEventListener('click', () => {
     voltarPosJogoEl.classList.add("sumir");
