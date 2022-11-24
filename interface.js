@@ -1,5 +1,38 @@
-//menu principal
+let sensibilidadeEl = document.querySelector("#sensibilidade");
+let dificuldadeEl = document.querySelector("#dificuldade");
 
+sensibilidadeEl.addEventListener('input', () => {
+    if (sensibilidadeEl.value == '8') {
+        vPlayer = vPlayer2 = 8;
+    }
+    else if (sensibilidadeEl.value == '9') {
+        vPlayer = vPlayer2 = 9;
+    }
+    else if (sensibilidadeEl.value == '10') {
+        vPlayer = vPlayer2 = 10;
+    }
+    else if (sensibilidadeEl.value == '11') {
+        vPlayer = vPlayer2 = 11;
+    }
+});
+
+
+dificuldadeEl.addEventListener('input', () => {
+    if (dificuldadeEl.value == '1') {
+        vCpu = 8;
+    }
+    else if (dificuldadeEl.value == '2') {
+        vCpu = 12;
+    }
+    else if (dificuldadeEl.value == '3') {
+        vCpu = 15;
+    }
+    else if (dificuldadeEl.value == '4') {
+        vCpu = 20;
+    }
+});
+
+//menu principal
 let opcoesEl = document.querySelector("#opcoes");
 let botaoJogarEl = document.querySelector("#jogar");
 let tituloEl = document.querySelector("#titulo");
@@ -62,22 +95,7 @@ botaoVoltarMenuEl.addEventListener('click', () => {
     posPlayerY = posPlayer2Y = posCpuY = 180;
 })
 
-let sensibilidadeEl = document.querySelector("#sensibilidade");
 
-sensibilidadeEl.addEventListener('input', () => {
-    if (sensibilidadeEl.value == '8') {
-        vCpu = vPlayer = vPlayer2 = 8;
-    }
-    else if (sensibilidadeEl.value == '9') {
-        vCpu = vPlayer = vPlayer2 = 9;
-    }
-    else if (sensibilidadeEl.value == '10') {
-        vCpu = vPlayer = vPlayer2 = 10;
-    }
-    else if (sensibilidadeEl.value == '11') {
-        vCpu = vPlayer = vPlayer2 = 11;
-    }
-})
 
 // menu partida rápida
 
