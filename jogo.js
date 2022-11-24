@@ -229,7 +229,7 @@ voltarPosJogoEl.addEventListener('click', () => {
 })
 function controlaCPU() {
     if (jogo) {
-        if (posBolaX > (campoLargura / 2) && bolaX > 0) {
+        if (posBolaX > (campoLargura / 3) && bolaX > 0) {
             if (posBolaY + (bolaAltura / 2) > ((posCpuY + (barraAltura / 2)) + vCpu)) {
                 if ((posCpuY + barraAltura) <= campoAltura) {
                     posCpuY += vCpu;
