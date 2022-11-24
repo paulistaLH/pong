@@ -30,7 +30,8 @@ let barraAltura = 140, barraLargura = 20;
 let campoAltura = 500, campoLargura = 960;
 let bolaAltura = bolaLargura = 20;
 vCpu = vPlayer = vPlayer2 = 9;
-vBola = 5;
+vBola = 6;
+let aux = 0;
 
 botaoComecarEl.addEventListener('click', puxaPartida);
 
@@ -82,7 +83,9 @@ function puxaPartida() {
         posBolaY = 240;
         posPlayerY = posPlayer2Y = posCpuY = 180;
         bolaY = 0;
-        vCpu = vPlayer = vPlayer2 = 8;
+        if (aux==0) {
+            vCpu = vPlayer = vPlayer2 = 8;
+        }
         vBola = 6;
 
         if ((Math.random() * 10) < 5) {
@@ -97,6 +100,7 @@ function puxaPartida() {
 
 function partida() {
     if (jogo) {
+        aux++;
         botaoComecarEl.classList.add("sumir");
         posicionamentoPlayer();
         posicionamentoBola();
@@ -174,7 +178,7 @@ function posicionamentoBola() {
         cpuEl.style.top = posCpuY + "px";
         botaoComecarEl.classList.remove("sumir");
     }
-    if (pontosEsquerdaEl.value == 7) {
+    if (pontosEsquerdaEl.value == 1) {
         vBola = 0;
         botaoComecarEl.classList.add("sumir");
         reiniciarEl.classList.remove("sumir");
@@ -183,7 +187,7 @@ function posicionamentoBola() {
         vencedorEl.innerHTML = "Jogador 1 venceu!"
         configurarEl.classList.add("sumir");
     }
-    else if (pontosDireitaEl.value == 7) {
+    else if (pontosDireitaEl.value == 1) {
         vBola = 0;
         botaoComecarEl.classList.add("sumir");
         reiniciarEl.classList.remove("sumir");
@@ -223,26 +227,26 @@ voltarPosJogoEl.addEventListener('click', () => {
     pontosDireitaEl.value = 0;
     pontosEsquerdaEl.value = 0;
 })
-function controlaCPU(){
-    if(jogo){
-        if(posBolaX > (campoLargura / 2) && bolaX > 0){
-            if(posBolaY + (bolaAltura / 2) > ((posCpuY + (barraAltura / 2)) + vCpu)){
-                if((posCpuY + barraAltura) <= campoAltura){
+function controlaCPU() {
+    if (jogo) {
+        if (posBolaX > (campoLargura / 2) && bolaX > 0) {
+            if (posBolaY + (bolaAltura / 2) > ((posCpuY + (barraAltura / 2)) + vCpu)) {
+                if ((posCpuY + barraAltura) <= campoAltura) {
                     posCpuY += vCpu;
                 }
             }
-            else if(posBolaY + (bolaAltura / 2) < (posCpuY + (barraAltura / 2)) - vCpu){
-                    if(posCpuY >= 0){
-                        posCpuY -= vCpu;
+            else if (posBolaY + (bolaAltura / 2) < (posCpuY + (barraAltura / 2)) - vCpu) {
+                if (posCpuY >= 0) {
+                    posCpuY -= vCpu;
                 }
-            }   
+            }
         }
-        else{
-            
-            if(posCpuY + (barraAltura / 2) < (campoAltura / 2)){
+        else {
+
+            if (posCpuY + (barraAltura / 2) < (campoAltura / 2)) {
                 posCpuY += vCpu;
             }
-            else if(posCpuY + (barraAltura / 2) > (campoAltura / 2)){
+            else if (posCpuY + (barraAltura / 2) > (campoAltura / 2)) {
                 posCpuY -= vCpu;
             }
         }
