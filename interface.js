@@ -55,6 +55,7 @@ let botaoVoltarMenuEl = document.querySelector("#voltar_menu");
 
 configurarEl.addEventListener('click', () => {
     configsEl.classList.remove("sumir");
+    botaoVoltarConfigEl.classList.remove("sumir");
     configurarEl.classList.add("sumir");
     jogoEl.classList.add("sumir");
     painelEl.classList.add("sumir");
@@ -135,73 +136,11 @@ botaoMultiplayerEl.addEventListener('click', () => {
     botaoComecarEl.classList.remove("sumir");
 })
 
-//menu torneio
+let configsMenuEl = document.querySelector("#opcao_config");
 
-let botaoVoltarTorneioEl = document.querySelector("#voltar_torneio");
-let torneioEl = document.querySelector("#torneio");
-let botaoTorneioEl = document.querySelector("#botao_torneio");
-
-botaoTorneioEl.addEventListener('click', () => {
+configsMenuEl.addEventListener('click', ()=>{
     menuEl.classList.add("sumir");
-    torneioEl.classList.remove("sumir");
-});
-botaoVoltarTorneioEl.addEventListener('click', () => {
-    menuEl.classList.remove("sumir");
-    torneioEl.classList.add("sumir");
-});
-
-//seleções
-
-let botaoBrasilEl = document.querySelector("#brasil");
-let botaoArgentinaEl = document.querySelector("#argentina");
-let botaoEspanhaEl = document.querySelector("#espanha");
-let botaoFrancaEl = document.querySelector("#franca");
-let botaoChinaEl = document.querySelector("#china");
-let botaoJapaoEl = document.querySelector("#japao");
-let botaoEuaEl = document.querySelector("#eua");
-let botaoAlemanhaEl = document.querySelector("#alemanha");
-let selecionadoEl = document.querySelector("#selecionado");
-let botaoPais = document.querySelectorAll(".botaoPais");
-let uniforme;
-
-for (let i = 0; i < botaoPais.length; i++) {
-    botaoPais[i].addEventListener('click', function (e) {
-        for (let j = 0; j < botaoPais.length; j++) {
-            botaoPais[j].classList.remove('selecionado');
-        };
-        let botaoPaisEl = e.currentTarget;
-        botaoPaisEl.classList.add('selecionado');
-    });
-};
-
-
-botaoBrasilEl.addEventListener('click', () => {
-    selecionadoEl.innerHTML = 'Selecao escolhida: Brasil';
-})
-botaoArgentinaEl.addEventListener('click', () => {
-    selecionadoEl.innerHTML = 'Selecao escolhida: Argentina';
-})
-botaoEspanhaEl.addEventListener('click', () => {
-    selecionadoEl.innerHTML = 'Selecao escolhida: Espanha';
-})
-botaoFrancaEl.addEventListener('click', () => {
-    selecionadoEl.innerHTML = 'Selecao escolhida: Franca';
-})
-botaoChinaEl.addEventListener('click', () => {
-    selecionadoEl.innerHTML = 'Selecao escolhida: China';
-})
-botaoJapaoEl.addEventListener('click', () => {
-    selecionadoEl.innerHTML = 'Selecao escolhida: Japao';
-})
-botaoEuaEl.addEventListener('click', () => {
-    selecionadoEl.innerHTML = 'Selecao escolhida: Estados Unidos';
-})
-botaoAlemanhaEl.addEventListener('click', () => {
-    selecionadoEl.innerHTML = 'Selecao escolhida: Alemanha';
-})
-
-let botaoJogarTorneioEl = document.querySelector("#jogar_torneio");
-
-botaoJogarTorneioEl.addEventListener('click', () => {
-    torneioEl.classList.add("sumir");
+    configsEl.classList.remove("sumir");
+    configurarEl.classList.add("sumir");
+    botaoVoltarConfigEl.classList.add("sumir");
 })

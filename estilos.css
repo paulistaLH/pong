@@ -9,7 +9,8 @@ h1 {
 h2 {
     font-size: 70px;
     margin: 0;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
+    padding-top: 20px;
 }
 
 h3 {
@@ -63,8 +64,7 @@ select {
 
 label, #voltar_menu {
     font-size: 30px;
-    padding-right: 10px;
-    padding-bottom: 10px;
+    padding: 20px;
 }
 
 option {
@@ -107,13 +107,15 @@ article {
     margin-left: 37%;
 }
 
-#menu,
+#menu{
+    margin-left: 37%;
+}
 #partida {
     margin-left: 23.7%;
 }
 
 #configs {
-    margin-left: 33%;
+    margin-left: 28%;
 }
 
 #torneio {
