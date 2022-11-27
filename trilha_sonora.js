@@ -39,14 +39,26 @@ function desmutar() {
 
 botaoVolumeEl.addEventListener('click', () => {
     if (audioMenu.muted == false) {
+        window.localStorage.setItem('volume', '1');
         imgBotao.style.backgroundColor = '#a09f9f';
         mutar();
     }
     else{
+        window.localStorage.setItem('volume', '0');
         imgBotao.style.backgroundColor = 'white';
         desmutar();
     }
 
 })
 
+window.addEventListener('load', ()=>{
+    if(localStorage.getItem('volume')== '1'){
+        imgBotao.style.backgroundColor = '#a09f9f';
+        mutar();  
+    }
+    else{
+        imgBotao.style.backgroundColor = 'white';
+        desmutar();
+    }
+})
 
