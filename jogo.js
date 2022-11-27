@@ -180,7 +180,12 @@ function posicionamentoBola() {
     }
     if (pontosEsquerdaEl.value == 7) {
         audioJogo.pause();
-        audioPosJogo.play();
+        if(pontosDireitaEl.value == 1){
+            golDaAlemanha.play();
+        }
+        else{
+            audioPosJogo.play();
+        }
         vBola = 0;
         botaoComecarEl.classList.add("sumir");
         reiniciarEl.classList.remove("sumir");
@@ -191,7 +196,12 @@ function posicionamentoBola() {
     }
     else if (pontosDireitaEl.value == 7) {
         audioJogo.pause();
-        audioPosJogo.play();
+        if(pontosEsquerdaEl.value == 1){
+            golDaAlemanha.play();
+        }
+        else{
+            audioPosJogo.play();
+        }
         vBola = 0;
         botaoComecarEl.classList.add("sumir");
         reiniciarEl.classList.remove("sumir");
@@ -258,4 +268,14 @@ function controlaCPU() {
         }
     }
     cpuEl.style.top = posCpuY + "px";
+}
+if(pontosDireitaEl.value == 7 && pontosEsquerdaEl.value == 1){
+    audioJogo.pause();
+    audioPosJogo.pause();
+    golDaAlemanha.play();
+}
+else if(pontosDireitaEl.value == 1 && pontosEsquerdaEl.value == 7){
+    audioJogo.pause();
+    audioPosJogo.pause();
+    golDaAlemanha.play();
 }
