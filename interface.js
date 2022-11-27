@@ -94,6 +94,7 @@ botaoVoltarMenuEl.addEventListener('click', () => {
     posBolaX = 475;
     posBolaY = 240;
     posPlayerY = posPlayer2Y = posCpuY = 180;
+    audioMenu.play();
 })
 
 

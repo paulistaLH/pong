@@ -27,10 +27,6 @@ select {
     font-family: 'Press Start 2P', cursive;
 }
 
-#configurar {
-    display: block;
-    font-size: 30px;
-}
 
 .sentenca {
     font-size: 40px;
@@ -39,7 +35,7 @@ select {
 
 #opcoes button,
 #configurar,
-#torneio button, 
+#torneio button,
 #começar {
     font-size: 20px;
     padding: 7px;
@@ -62,7 +58,8 @@ select {
     visibility: hidden !important;
 }
 
-label, #voltar_menu {
+label,
+#voltar_menu {
     font-size: 30px;
     padding: 20px;
 }
@@ -71,7 +68,9 @@ option {
     font-size: 20px;
 }
 
-select, #reiniciar, #voltar_menu_jogo {
+select,
+#reiniciar,
+#voltar_menu_jogo {
     font-size: 20px;
     background-color: black;
     padding: 3px;
@@ -107,9 +106,10 @@ article {
     margin-left: 37%;
 }
 
-#menu{
+#menu {
     margin-left: 37%;
 }
+
 #partida {
     margin-left: 23.7%;
 }
@@ -162,21 +162,46 @@ h3 {
     left: 10px
 }
 
-#painel{
+#painel {
     display: flex;
     justify-content: center;
 }
-input{
+
+input {
     background-color: black;
     color: white;
     font-family: 'Press Start 2P', cursive;
     height: 40px;
     width: 40px;
-    font-size:35px;
+    font-size: 35px;
 }
-.selecionado{
+
+.selecionado {
     background-color: grey;
 }
-p{
+
+p {
     font-size: 40px;
+}
+
+#botaoVolume {
+    position: absolute;
+    top: 5px;
+    left: 96%;
+}
+
+#botaoVolume img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    border: 4px solid rgb(75, 75, 75);
+    background-color: white;
+}
+
+#configurar {
+    position: absolute;
+    height: 5.5%;
+    top: 5px;
+    left: 5px;
+    font-size: 30px;
 }

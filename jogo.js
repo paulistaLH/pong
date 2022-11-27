@@ -83,7 +83,7 @@ function puxaPartida() {
         posBolaY = 240;
         posPlayerY = posPlayer2Y = posCpuY = 180;
         bolaY = 0;
-        if (aux==0) {
+        if (aux == 0) {
             vCpu = vPlayer = vPlayer2 = 8;
         }
         vBola = 6;
@@ -180,10 +180,10 @@ function posicionamentoBola() {
     }
     if (pontosEsquerdaEl.value == 7) {
         audioJogo.pause();
-        if(pontosDireitaEl.value == 1){
+        if (pontosDireitaEl.value == 1) {
             golDaAlemanha.play();
         }
-        else{
+        else {
             audioPosJogo.play();
         }
         vBola = 0;
@@ -196,10 +196,10 @@ function posicionamentoBola() {
     }
     else if (pontosDireitaEl.value == 7) {
         audioJogo.pause();
-        if(pontosEsquerdaEl.value == 1){
+        if (pontosEsquerdaEl.value == 1) {
             golDaAlemanha.play();
         }
-        else{
+        else {
             audioPosJogo.play();
         }
         vBola = 0;
@@ -242,6 +242,7 @@ voltarPosJogoEl.addEventListener('click', () => {
     botaoComecarEl.classList.add("sumir");
     pontosDireitaEl.value = 0;
     pontosEsquerdaEl.value = 0;
+    audioMenu.play();
 })
 function controlaCPU() {
     if (jogo) {
@@ -269,12 +270,12 @@ function controlaCPU() {
     }
     cpuEl.style.top = posCpuY + "px";
 }
-if(pontosDireitaEl.value == 7 && pontosEsquerdaEl.value == 1){
+if (pontosDireitaEl.value == 7 && pontosEsquerdaEl.value == 1) {
     audioJogo.pause();
     audioPosJogo.pause();
     golDaAlemanha.play();
 }
-else if(pontosDireitaEl.value == 1 && pontosEsquerdaEl.value == 7){
+else if (pontosDireitaEl.value == 1 && pontosEsquerdaEl.value == 7) {
     audioJogo.pause();
     audioPosJogo.pause();
     golDaAlemanha.play();

@@ -7,12 +7,15 @@
     <link rel="stylesheet" href="estilos.css">
     <link rel="icon" href="imgs/icone.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rock+Salt&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rock+Salt&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <button id="botaoVolume"><img src="imgs/mute.png" id="imagemBotao"></button>
     <button id="configurar" class="sumir">Configs.</button><br>
+
+
     <main>
 
         <article id="titulo">
@@ -31,7 +34,8 @@
 
         <article id="partida" class="sumir">
             <button id="voltar_partida" class="voltar">
-                <- voltar</button> <h2 class="sentenca">Quem sera o adversario?</h2>
+                <- voltar</button>
+                    <h2 class="sentenca">Quem sera o adversario?</h2>
                     <div id="opcoes">
                         <button id="computador">Vs. cpu</button>
                         <button id="multiplayer">Multiplayer</button>
@@ -41,13 +45,8 @@
 
         <article id="configs" class="sumir">
             <button id="voltar_configs" class="voltar">
-                <- voltar</button> <h2>Configs.</h2>
-                    <label for="musica">Trilha sonora:</label>
-                    <select id="musica" value="">
-                        <option value="1">Ligado</option>
-                        <option id="desligado" value="0">Desligado</option>
-                    </select>
-                    <br>
+                <- voltar</button>
+                    <h2>Configs.</h2>
                     <label for="sensibilidade">Sensibilidade:</label>
                     <select id="sensibilidade" value="">
                         <option value="8">8</option>
@@ -62,7 +61,8 @@
                         <option value="3">Dificil</option>
                         <option value="4">EXTREMO</option>
                     </select><br>
-                    <button id="voltar_menu" class="sair"><- Voltar ao menu principal</button>
+                    <button id="voltar_menu" class="sair">
+                        <- Voltar ao menu principal</button>
         </article>
         <div id="painel" class="sumir">
             <div class="item"><input type="text" id="pontosEsquerda" value="0" size="7" disabled></div>
@@ -81,10 +81,10 @@
             <button id="voltar_menu_jogo" class="sumir">Sair</button>
         </div>
     </main>
-    <audio  src="audio/menu.mp3" loop id="audio_menu"></audio>
-    <audio src="audio/jogo.mp3" loop id="audio_jogo"></audio>
-    <audio src="audio/posJogo.mp3" loop id="audio_posJogo"></audio>
-    <audio src="audio/gol-da-alemanha.mp3" id="gol_alemanha"></audio>
+    <audio src="audio/menu.mp3" loop id="audio_menu" class="audio"></audio>
+    <audio src="audio/jogo.mp3" loop id="audio_jogo" class="audio"></audio>
+    <audio src="audio/posJogo.mp3" loop id="audio_posJogo" class="audio"></audio>
+    <audio src="audio/gol-da-alemanha.mp3" id="gol_alemanha" class="audio"></audio>
 </body>
 
 <script src="jogo.js"></script>
