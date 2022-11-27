@@ -179,6 +179,8 @@ function posicionamentoBola() {
         botaoComecarEl.classList.remove("sumir");
     }
     if (pontosEsquerdaEl.value == 7) {
+        audioJogo.pause();
+        audioPosJogo.play();
         vBola = 0;
         botaoComecarEl.classList.add("sumir");
         reiniciarEl.classList.remove("sumir");
@@ -188,6 +190,8 @@ function posicionamentoBola() {
         configurarEl.classList.add("sumir");
     }
     else if (pontosDireitaEl.value == 7) {
+        audioJogo.pause();
+        audioPosJogo.play();
         vBola = 0;
         botaoComecarEl.classList.add("sumir");
         reiniciarEl.classList.remove("sumir");
@@ -201,6 +205,7 @@ function posicionamentoBola() {
 }
 
 reiniciarEl.addEventListener('click', () => {
+    audioPosJogo.pause();
     pontosDireitaEl.value = 0;
     pontosEsquerdaEl.value = 0;
     reiniciarEl.classList.add("sumir");
@@ -212,6 +217,7 @@ reiniciarEl.addEventListener('click', () => {
 });
 
 voltarPosJogoEl.addEventListener('click', () => {
+    audioPosJogo.pause();
     voltarPosJogoEl.classList.add("sumir");
     botaoComecarEl.classList.remove("sumir");
     player2El.classList.remove("sumir");

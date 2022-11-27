@@ -44,8 +44,8 @@
                 <- voltar</button> <h2>Configs.</h2>
                     <label for="musica">Trilha sonora:</label>
                     <select id="musica" value="">
-                        <option value="ligado">Ligado</option>
-                        <option value="desligado">Desligado</option>
+                        <option value="1">Ligado</option>
+                        <option value="0">Desligado</option>
                     </select>
                     <br>
                     <label for="sensibilidade">Sensibilidade:</label>
@@ -81,9 +81,13 @@
             <button id="voltar_menu_jogo" class="sumir">Sair</button>
         </div>
     </main>
+    <audio  src="audio/menu.mp3" loop id="audio_menu"></audio>
+    <audio src="audio/jogo.mp3" loop id="audio_jogo"></audio>
+    <audio src="audio/posJogo.mp3" loop id="audio_posJogo"></audio>
 </body>
 
 <script src="jogo.js"></script>
 <script src="interface.js"></script>
+<script src="trilha_sonora.js"></script>
 
 </html>
