@@ -21,7 +21,7 @@ h3 {
 button,
 option,
 html,
-select {
+select{
     background-color: black;
     color: white;
     font-family: 'Press Start 2P', cursive;
@@ -237,4 +237,12 @@ li {
     font-size: 20px;
     padding: 5px;
     border-radius: 10px;
+}
+
+.legenda{
+    position: absolute;
+    left: 10px;
+    top: 95.5%;
+    color: rgb(53, 53, 53);
+    font-family: 'Press Start 2P', cursive;
 }
