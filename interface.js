@@ -37,11 +37,13 @@ let opcoesEl = document.querySelector("#opcoes");
 let botaoJogarEl = document.querySelector("#jogar");
 let tituloEl = document.querySelector("#titulo");
 let configurarEl = document.querySelector("#configurar");
+let legendaEl = document.querySelector(".legenda");
 
 botaoJogarEl.addEventListener('click', () => {
     opcoesEl.classList.remove("sumir");
     menuEl.classList.remove("sumir");
     tituloEl.classList.add("sumir");
+    legendaEl.classList.add("sumir");
 });
 
 // menu de configurações
