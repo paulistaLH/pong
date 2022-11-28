@@ -44,7 +44,8 @@ select {
 
 #opcoes button,
 #configurar,
-#menu_torneio button {
+#menu_torneio button,
+.tecla {
     border: 3px solid white;
 }
 
@@ -70,7 +71,8 @@ option {
 
 select,
 #reiniciar,
-#voltar_menu_jogo {
+#voltar_menu_jogo,
+#voltarControles {
     font-size: 20px;
     background-color: black;
     padding: 3px;
@@ -120,6 +122,9 @@ article {
 
 #torneio {
     margin-left: 29%;
+}
+#menuControles{
+    margin-left: 32%;
 }
 
 h3 {
@@ -180,7 +185,7 @@ input {
     background-color: grey;
 }
 
-p {
+#vencedor {
     font-size: 40px;
 }
 
@@ -204,4 +209,32 @@ p {
     top: 5px;
     left: 5px;
     font-size: 30px;
+}
+
+button {
+    border-radius: 3px;
+}
+
+#botao_partida {
+    width: 40%;
+}
+
+li {
+    list-style-type: none;
+    padding-bottom: 20px;
+}
+
+#instrucoes{
+    display: flex;
+    justify-content: center;
+}
+
+.player1{
+    padding-right: 15%;
+}
+
+.tecla{
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 10px;
 }

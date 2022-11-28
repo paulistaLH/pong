@@ -138,11 +138,18 @@ botaoMultiplayerEl.addEventListener('click', () => {
     botaoComecarEl.classList.remove("sumir");
 })
 
-let configsMenuEl = document.querySelector("#opcao_config");
+let controlesEl = document.querySelector("#controles");
+let menuControlesEl = document.querySelector("#menuControles");
 
-configsMenuEl.addEventListener('click', ()=>{
+controlesEl.addEventListener('click', ()=>{
     menuEl.classList.add("sumir");
-    configsEl.classList.remove("sumir");
-    configurarEl.classList.add("sumir");
-    botaoVoltarConfigEl.classList.add("sumir");
+    menuControlesEl.classList.remove("sumir");
+    
+})
+
+let voltarControlesEl = document.querySelector("#voltarControles");
+
+voltarControlesEl.addEventListener('click', ()=>{
+    menuEl.classList.remove("sumir");
+    menuControlesEl.classList.add("sumir");
 })
