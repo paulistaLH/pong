@@ -76,6 +76,7 @@ document.addEventListener('keyup', (e) => {
 function puxaPartida() {
     if (jogo == 0) {
         cancelAnimationFrame(frame);
+        configurarEl.classList.remove("sumir");
         jogo = 1;
         dirY = 0;
         dirY2 = 0;

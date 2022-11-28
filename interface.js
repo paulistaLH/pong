@@ -123,7 +123,6 @@ botaoVsCpuEl.addEventListener('click', () => {
     partidaEl.classList.add("sumir");
     painelEl.classList.remove("sumir");
     player2El.classList.add("sumir");
-    configurarEl.classList.remove("sumir");
     botaoComecarEl.classList.remove("sumir");
 })
 
@@ -134,7 +133,6 @@ botaoMultiplayerEl.addEventListener('click', () => {
     partidaEl.classList.add("sumir");
     painelEl.classList.remove("sumir");
     cpuEl.classList.add("sumir");
-    configurarEl.classList.remove("sumir");
     botaoComecarEl.classList.remove("sumir");
 })
 
