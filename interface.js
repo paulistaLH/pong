@@ -22,13 +22,13 @@ dificuldadeEl.addEventListener('input', () => {
         vCpu = 8;
     }
     else if (dificuldadeEl.value == '2') {
-        vCpu = 12;
-    }
-    else if (dificuldadeEl.value == '3') {
         vCpu = 15;
     }
-    else if (dificuldadeEl.value == '4') {
+    else if (dificuldadeEl.value == '3') {
         vCpu = 20;
+    }
+    else if (dificuldadeEl.value == '4') {
+        vCpu = 25;
     }
 });
 
