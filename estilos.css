@@ -35,7 +35,6 @@ select{
 
 #opcoes button,
 #configurar,
-#torneio button,
 #começar {
     font-size: 20px;
     padding: 7px;
@@ -44,7 +43,6 @@ select{
 
 #opcoes button,
 #configurar,
-#menu_torneio button,
 .tecla {
     border: 3px solid white;
 }
@@ -84,20 +82,10 @@ select,
     font-size: 25px;
 }
 
-#selecoes1,
-#selecoes2 {
-    display: flex;
-    justify-content: center;
-}
-
 img {
     width: 140px;
     height: 75px;
     padding-bottom: 5px;
-}
-
-#torneio button {
-    width: 180px;
 }
 
 article {
@@ -120,9 +108,6 @@ article {
     margin-left: 28%;
 }
 
-#torneio {
-    margin-left: 29%;
-}
 #menuControles{
     margin-left: 32%;
 }
